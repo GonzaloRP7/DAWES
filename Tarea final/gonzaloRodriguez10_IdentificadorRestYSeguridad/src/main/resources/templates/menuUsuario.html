@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>menu Usuario</title>
+<style>
+	th, td{
+		border: 1px solid green;
+		padding: 4px;
+	}
+	table{
+		border-collapse: collapse;
+	}
+</style>
+</head>
+<body>
+	<h1>menu Usuario</h1>
+	<table>
+		<tr>
+			<th>NIF</th>
+			<th>Nombre</th>
+			<th>Apellidos</th>
+			<th>Fecha</th>
+			<th>Actualizar</th>
+		</tr>
+		<tr th:each="x:${listarProveedores}">
+			<td th:text="*{x.nif}"></td>
+			<td th:text="*{x.nombre}"></td>
+			<td th:text="*{x.apellidos}"></td>
+			<td th:text="*{x.fecha}"></td>
+			<td><a th:href="@{/proveedor/formActualizar(nif=${x.nif},ruta=menuUsuario)}">Actualizar</a></td>
+		</tr>
+	</table>
+	<p>
+		<a th:href="@{/index}">Volver</a>
+	</p>
+
+</body>
+</html>

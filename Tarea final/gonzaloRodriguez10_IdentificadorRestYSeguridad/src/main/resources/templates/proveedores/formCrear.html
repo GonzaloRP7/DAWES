@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Form Crear</title>
+</head>
+<body>
+<h1>Form Crear</h1>
+<form th:action="@{/proveedor/crear(ruta=menuAdmin)}" method="post" th:object="${proveedor}">
+	<p>NIF: <input type="text" th:field="*{nif}"></p>
+	<p>Nombre: <input type="text" th:field="*{nombre}"></p>
+	<p>Apellidos: <input type="text" th:field="*{apellidos}"></p>
+	<p>Fecha: <input type="date" th:field="*{fecha}"></p>
+	<input type="submit" value="Crear">
+</form>
+
+</body>
+</html>

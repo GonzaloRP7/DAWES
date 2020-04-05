@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>menu Admin</title>
+<style>
+	th, td{
+		border: 1px solid green;
+		padding: 4px;
+	}
+	table{
+		border-collapse: collapse;
+	}
+</style>
+</head>
+<body>
+	<h1>menu Admin</h1>
+	<table>
+		<tr>
+			<th>NIF</th>
+			<th>Nombre</th>
+			<th>Apellidos</th>
+			<th>Fecha</th>
+			<th>Actualizar</th>
+			<th>Eliminar</th>
+		</tr>
+		<tr th:each="x:${listarProveedores}">
+			<td th:text="*{x.nif}"></td>
+			<td th:text="*{x.nombre}"></td>
+			<td th:text="*{x.apellidos}"></td>
+			<td th:text="*{x.fecha}"></td>
+			<td><a th:href="@{/proveedor/formActualizar(nif=${x.nif},ruta=menuAdmin)}">Actualizar</a></td>
+			<td><a th:href="@{/proveedor/eliminar(nif=${x.nif})}">Eliminar</a></td>
+		</tr>
+	</table>
+	<p>
+		<a th:href="@{/proveedor/formCrear}">Crear proveedor</a>
+	</p>
+
+	<p>
+		<a th:href="@{/index}">Volver</a>
+	</p>
+
+</body>
+</html>

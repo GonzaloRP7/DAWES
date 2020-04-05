@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Form Actualizar</title>
+</head>
+<body>
+<h1>Form Actualizar</h1>
+<form th:action="@{/proveedor/crear(ruta=${ruta})}" method="post" th:object="${proveedor}">
+	<p>NIF: <input type="text" th:field="*{nif}"></p>
+	<p>Nombre: <input type="text" th:field="*{nombre}"></p>
+	<p>Apellidos: <input type="text" th:field="*{apellidos}"></p>
+	<p>Fecha: <input type="date" th:field="*{fecha}"></p>
+	<input type="hidden" th:field="*{idproveedor}">
+	<input type="submit" value="Actualizar">
+</form>
+
+</body>
+</html>

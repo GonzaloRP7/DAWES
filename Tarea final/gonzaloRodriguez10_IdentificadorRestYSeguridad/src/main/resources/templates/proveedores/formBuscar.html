@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Form Buscar</title>
+</head>
+<body>
+<h1>Form Buscar</h1>
+<form th:action="@{/proveedor/buscar}" method="get" th:object="${proveedor}">
+	<p>Introduce el nif a buscar: <input type="text" th:field="*{nif}"></p>
+	<input type="submit" value="Buscar">
+</form>
+
+</body>
+</html>
